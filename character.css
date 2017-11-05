@@ -1,0 +1,50 @@
+
+  
+  .eye-animation {
+    width: 1800%;
+    height: 100%;
+    background: rgba(255,255,255,0.3);   
+    background-image: url("chrome-extension://__MSG_@@extension_id__/image/blinking-eye-sprite.svg");
+    background-size: 100%, 100%;
+    background-repeat: no-repeat;
+    animation-name: eye-fill;
+    animation-duration: 1.3s;
+    animation-timing-function: steps(17);
+    animation-iteration-count: infinite;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .eye-animation__wrapper {
+    margin: auto;
+    overflow: hidden;
+    position: fixed; 
+    background: rgba(255,255,255,0.3);   
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    z-index: 999999;
+  }
+  
+  @keyframes eye-fill {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-94.44444%);
+    }
+  }
+  .ie .eye-animation {
+    transform: translate3d(0, 0, 0);
+    animation-name: eye-fill-ie;
+  }
+  
+  @keyframes eye-fill-ie {
+    from {
+      left: 0;
+    }
+    to {
+      left: -1700%;
+    }
+  }
