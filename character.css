@@ -1,50 +1,41 @@
 
   
-  .eye-animation {
-    width: 1800%;
-    height: 100%;
+  .character-animation {
+    width: 160px;
+    height: 160px;
     background: rgba(255,255,255,0.3);   
-    background-image: url("chrome-extension://__MSG_@@extension_id__/image/blinking-eye-sprite.svg");
-    background-size: 100%, 100%;
+
+    background-image: '';
+    /*
+    background-image: url("image/cancel/1.png"),url("image/cancel/2.png"),url("image/cancel/3.png"),url("image/cancel/4.png"),url("image/cancel/5.png"),url("image/cancel/6.png"),url("image/cancel/7.png"),url("image/cancel/8.png"),url("image/cancel/9.png");
+    */
+    background-position: '';
     background-repeat: no-repeat;
-    animation-name: eye-fill;
-    animation-duration: 1.3s;
-    animation-timing-function: steps(17);
+    animation-name: character-fill;
+    animation-duration: 1s;
+    animation-timing-function: steps(1);
     animation-iteration-count: infinite;
     position: absolute;
     left: 0;
     top: 0;
   }
-  .eye-animation__wrapper {
+  .character_wrapper {
     margin: auto;
     overflow: hidden;
     position: fixed; 
     background: rgba(255,255,255,0.3);   
     left: 0;
-    bottom: 0;
-    width: 300px;
-    height: 300px;
+    bottom: 10px;
+    width: 160px;
+    height: 160px;
     z-index: 999999;
   }
   
-  @keyframes eye-fill {
+  @keyframes character-fill {
     from {
       transform: translateX(0);
     }
     to {
-      transform: translateX(-94.44444%);
-    }
-  }
-  .ie .eye-animation {
-    transform: translate3d(0, 0, 0);
-    animation-name: eye-fill-ie;
-  }
-  
-  @keyframes eye-fill-ie {
-    from {
-      left: 0;
-    }
-    to {
-      left: -1700%;
+      transform: translateX(-100%);
     }
   }
