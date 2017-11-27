@@ -71,9 +71,18 @@ function getDownloadObject(){
                     downloadSpeed: tmpChara.speed,
                     downloadProgress:tmpChara.progress
                 };
-                chrome.tabs.sendRequest(tabInfo.id, request);
+                chrome.tabs.sendRequest(tabInfo.id, request,frontAction);
             }
          });
+    }
+}
+function frontAction(response){
+    if(response.cancel){
+        let index = 0;
+        let tmpChara = character[index];
+        chrome.downloads.cancel(tmpChara.downloadItem.id,()=>{
+
+        });
     }
 }
 
